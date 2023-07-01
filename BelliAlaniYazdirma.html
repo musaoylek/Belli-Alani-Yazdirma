@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta name="description" content="Javascript İle Belli Alanı Yazdırma">
+<meta name="keywords" content="Javascript Projects, Javascript Print, Print Html Css Javascript, Javascript, Javascript Tutorial">
+<meta name="author" content="Musa ÖYLEK">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> Örnek Site </title>
+</head>
+
+<body>
+    <h3 style="background-color:#ff00ff;display:inline-block;color:white;font-size:30px;border-radius:12px">Javascript İle Belli Alanı Yazdırma</h3><br>
+    <button id="btn1">İstanbul Fethi Hazırlıkları</button>
+    <button id="btn2">İstanbul Fethi'nin Sebepleri</button>
+    <button id="btn3">İstanbul Fethi'nin Sonuçları</button>
+    <div id="bolum1" class="yazdir">
+        <h2>İstanbul Fethi Hazırlıkları</h2>
+        <p>Fatih Sultan Mehmet’in padişahlığında Osmanlı Devleti tarafından İstanbul’un fethi için yapılan hazırlıklar;<br><br>
+<ul><li>Doğu Roma’ya Karadeniz üzerinden deniz yoluyla gelebilecek yardımları önlemek için Anadolu Hisarı’nın karşısına “Boğazkesen” adı verilen Rumeli Hisarı yapıldı.<br>
+<li>Doğu Roma’nın İstanbul dışındaki toprakları alınarak (Vize ve Silivri kaleleri) Batı ile bağlantısı kesildi.
+<li>Surları aşmak için yürüyen tekerlekli kuleler yapıldı.<br>
+<li>Kuşatmayı denizden desteklemek üzere 400 gemiden oluşan donanma hazırlandı. Bu gemilere toplar yerleştirildi.<br>
+<li>Edirne’de Saruca, Müslihüddin ve Macar Urban’a surları yıkabilecek büyüklükte toplar döktürüldü. Fatih’in katkılarıyla havan topları yapıldı.<br>
+<li>Avrupa’dan gelebilecek saldırılara karşı Mora ve Balkanlara kuvvet gönderildi.</li></ul></p>
+    </div>
+    <div id="bolum2">
+        <h2>İstanbul Fethi Sebepleri</h2>
+        <p><ul><li>İstanbul’un jeopolitik konumunun önemli olması
+<li>Osmanlı toprak bütünlüğünün sağlanmak istenmesi
+<li>Doğu Roma’nın Haçlıları ve Anadolu beyliklerini Osmanlıya karşı kışkırtması
+<li>Doğu Roma’nın saltanat iddiasında bulunan şehzadeleri destekleyerek Osmanlı’da iç karışıklık çıkarmaya çalışması
+<li>Doğu Roma’nın, Osmanlı ordusunun Anadolu’dan Rumeli’ye, Rumeli’den Anadolu’ya  geçişini zorlaştırması
+<li>İstanbul’un alınmasıyla, Avrupa’nın Türkleri Balkanlardan atma ümidinin sona ereceği düşüncesi
+<li>Anadolu, Marmara ve Rumeli’nin güvenliğinin sağlanmak istenmesi
+<li>İstanbul’un önemli bir ticaret merkezi olması
+<li>Kara ve deniz ticaret yollarının, özellikle İpek Yolu’nun İstanbul’dan geçmesi
+<li>Hz. Peygamberin şehrin fethi müjdesini yüzyıllar öncesinde vermesi
+<li>İstanbul’un, Hıristiyanlığın doğudaki  son büyük kalesi olması</li></ul></p>
+    </div>
+    
+    <div id="bolum3">
+        <h2>İstanbul Fethi Sonuçları</h2>
+        <p><ul><li>Bin yıllık Doğu Roma İmparatorluğu sona erdi.
+<li>Orta Çağ kapandı, Yeni Çağ başladı.
+<li>Osmanlıların Avrupa siyasetindeki üstünlüğü ve stratejik önemi arttı.
+<li>Büyük topların surları yıktığı görüldü ve topun savaşlardaki önemi arttı. Bu durum Avrupa’daki feodalite rejiminin yıkılarak yerine mutlak krallıkların kurulmasında etkili oldu.
+<li>Ortodoks kilisesinin himaye edilmesiyle Avrupa Hıristiyan alemi ikiye bölündü.
+<li>İstanbul’dan Roma’ya giden bilim adamları Rönesans’ın başlamasını sağladılar.
+<li>İpek yolunun büyük ölçüde Osmanlıların eline geçmesi yeni yolların bulunması arayışını hızlandırdı. Coğrafi keşiflere zemin hazırlandı.</li></ul></p>
+    </div>
+    <script>
+    
+        const btn1=document.querySelector("#btn1");
+        const btn2=document.querySelector("#btn2");
+        const btn3=document.querySelector("#btn3");
+    
+        function yazdir(alanID)
+        {
+            //yazdırılacak nesneyi seçme
+            let yazilacakAlan = document.querySelector(alanID);
+
+            //yeni pencere aç, yazdırma alanını ekle
+            //yazdır ve pencereyi kapat
+            pencere=window.open();
+            pencere.document.body.innerHTML=yazilacakAlan.innerHTML; 
+            pencere.print();
+            pencere.close();
+        }
+        
+        //buton tıklama olayları
+        btn1.onclick=function(){
+           yazdir("#bolum1");
+        }
+        
+        btn2.onclick=function(){
+            console.log(2)
+            yazdir("#bolum2");
+            }
+            
+        btn3.onclick=function(){
+        console.log(3)
+        yazdir("#bolum3");
+        }
+        
+    </script>
+</body>
+</html>
+
+
+<style>
+#btn1, #btn2, #btn3{
+font-size:23px;
+background-color:yellow;
+}
+
+h2{
+font-size:23px;
+background-color:yellow;
+}
+</style>
